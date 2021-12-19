@@ -1,0 +1,4 @@
+struct animal {
+    name: String,
+    
+}
