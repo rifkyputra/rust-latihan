@@ -5,7 +5,7 @@ edition = "2021"
 
 [lib]
 name = "pokemon"
-path = "src/lesson_02_struct/lib.rs"
+path = "src/lat_02_struct/lib.rs"
 
 [dependencies]
 
