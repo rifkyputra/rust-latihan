@@ -8,6 +8,7 @@ name = "pokemon"
 path = "src/lat_02_struct/lib.rs"
 
 [dependencies]
+rusqlite = { version = "0.28.0", features = ["bundled"] }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
