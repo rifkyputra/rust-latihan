@@ -7,21 +7,18 @@ pub struct Creep {
 }
 
 impl world::WorldObject for Creep {
-
-    fn getId(&self) -> String{
+    fn get_id(&self) -> String {
         return self.id.clone();
     }
 
-    fn assignId(&self, id: String) -> Self {
+    fn assign_id(&self, id: String) -> Self {
         Self {
             id: id,
-            buff : String::from(&self.buff),
-            level : self.level,
+            buff: String::from(&self.buff),
+            level: self.level,
         }
     }
-
 }
-
 
 impl Creep {
     pub fn new(level: i8, buff: String) -> Self {

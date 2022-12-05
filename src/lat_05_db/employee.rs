@@ -1,7 +1,5 @@
 use rusqlite::{params, Connection, Error};
 
-use super::connection::openConnectionInMemory;
-
 #[derive(Debug, Clone, Default)]
 pub struct Employee {
     pub id: i32,
@@ -47,6 +45,6 @@ pub fn get_all_employee(conn: &Connection) -> Vec<Employee> {
     employees
 }
 
-pub fn deleteEmployeeById(conn: &Connection, id: i32) -> Result<usize, Error> {
+pub fn delete_employee_by_id(conn: &Connection, id: i32) -> Result<usize, Error> {
     conn.execute("DELETE FROM employee WHERE id = ?1", params![id])
 }

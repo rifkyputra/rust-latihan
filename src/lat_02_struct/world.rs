@@ -1,20 +1,12 @@
-
-struct World {
-
-}
-
 pub trait WorldObject {
-    fn getId(&self)-> String;
+    fn get_id(&self) -> String;
 
-    fn assignId(&self, id: String) -> Self;
-
-
-
+    fn assign_id(&self, id: String) -> Self;
 }
 
-pub trait allObjects {
-    fn getAll();
-    fn removeById( id: i8);
+pub trait AllObjects {
+    fn get_all();
+    fn remove_by_id(id: i8);
 
-    fn add<T>(object: T); 
+    fn add<T>(object: T);
 }

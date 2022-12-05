@@ -1,8 +1,6 @@
 use std::io;
 
-
 pub fn prompt() {
-
     let name = "World";
 
     let mut buffer = String::new();
@@ -11,12 +9,10 @@ pub fn prompt() {
     print!("> ");
     io::stdin().read_line(&mut buffer).unwrap();
 
-    
     println!("Hello, {}!", name);
     println!("Hello, {}", buffer);
 
     println!("-----------");
-
 
     println!("Pakai Assistant apa ? /");
     println!("1. Google");
@@ -29,13 +25,12 @@ pub fn prompt() {
 
     io::stdin().read_line(&mut select).unwrap();
 
-    let something :Assistant = match select.trim().parse::<u8>() {
+    let something: Assistant = match select.trim().parse::<u8>() {
         Ok(n) => selection(n),
         Err(e) => {
             println!("{}", e);
             selection(0)
-        },
-        
+        }
     };
 
     match something {
@@ -45,10 +40,7 @@ pub fn prompt() {
         Assistant::Siri => hi_siri(),
         Assistant::Alexa => other(),
         Assistant::Bixby => other(),
-
     }
-
-
 }
 
 enum Assistant {
@@ -71,9 +63,7 @@ fn selection(num: u8) -> Assistant {
     return Assistant::Bixby;
 }
 
-
 fn hi_siri() {
-
     println!("Hi, I'm Siri,  What Can i help ? ");
 
     let mut buffer = String::new();
@@ -81,8 +71,6 @@ fn hi_siri() {
     io::stdin().read_line(&mut buffer).unwrap();
 
     println!("Sorry i can't do {} right now", buffer);
-
-
 }
 
 fn other() {

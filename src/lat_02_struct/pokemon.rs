@@ -9,15 +9,15 @@ pub struct Pokemon {
 }
 
 impl world::WorldObject for Pokemon {
-    fn getId(&self) -> String{
+    fn get_id(&self) -> String {
         return self.id.clone();
     }
 
-    fn assignId(&self, id: String) -> Self {
+    fn assign_id(&self, id: String) -> Self {
         Self {
             id: id,
-            buff : String::from(&self.buff),
-            level : self.level,
+            buff: String::from(&self.buff),
+            level: self.level,
             name: String::from(&self.name),
             skills: self.skills.clone(),
         }
@@ -32,14 +32,10 @@ impl Pokemon {
             level: 1,
             name: name,
             skills: skills,
-
         }
     }
-
 
     pub fn level_up(&mut self) {
         self.level += 1;
     }
 }
-
-
